@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import CompanyOverviewSection from "@/components/sections/CompanyOverviewSection";
 import KeyMetricsSection from "@/components/sections/KeyMetricsSection";
@@ -15,48 +17,52 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Section 1 — Hero */}
-      <HeroSection />
+    <>
+      <Navbar />
+      <main className="flex min-h-screen flex-col">
+        {/* Section 1 — Hero */}
+        <HeroSection />
 
-      {/* Section 2 — Company Overview */}
-      <CompanyOverviewSection />
+        {/* Section 2 — Company Overview */}
+        <CompanyOverviewSection />
 
-      {/* Section 3 — Key Metrics */}
-      <KeyMetricsSection />
+        {/* Section 3 — Key Metrics */}
+        <KeyMetricsSection />
 
-      {/* Section 4 — Dynamic Market (The Opportunity) */}
-      <DynamicMarketSection />
+        {/* Section 4 — Dynamic Market (The Opportunity) */}
+        <DynamicMarketSection />
 
-      {/* Section 5 — The Digital Advertising Predicament */}
-      <AdvertisingPredicamentSection />
+        {/* Section 5 — The Digital Advertising Predicament */}
+        <AdvertisingPredicamentSection />
 
-      {/* Section 6 — How the Model Solves This */}
-      <ModelSolutionSection />
+        {/* Section 6 — How the Model Solves This */}
+        <ModelSolutionSection />
 
-      {/* Section 7 — The AI-Driven Bridge for Modern Marketing */}
-      <AIBridgeSection />
+        {/* Section 7 — The AI-Driven Bridge for Modern Marketing */}
+        <AIBridgeSection />
 
-      {/* Section 8 — User Flow: The Intent Refinement Engine */}
-      <UserFlowSection />
+        {/* Section 8 — User Flow: The Intent Refinement Engine */}
+        <UserFlowSection />
 
-      {/* Section 9 — TOP Genius AI */}
-      <TopGeniusSection />
+        {/* Section 9 — TOP Genius AI */}
+        <TopGeniusSection />
 
-      {/* Section 10 — Building Defensible Growth */}
-      <DefensibleGrowthSection />
+        {/* Section 10 — Building Defensible Growth */}
+        <DefensibleGrowthSection />
 
-      {/* Section 11 — Founder-Led Leadership */}
-      <LeadershipSection />
+        {/* Section 11 — Founder-Led Leadership */}
+        <LeadershipSection />
 
-      {/* Section 12 — Product Logos */}
-      <ProductLogosSection />
+        {/* Section 12 — Product Logos */}
+        <ProductLogosSection />
 
-      {/* Section 13 — Google Cloud Startup */}
-      <GoogleCloudSection />
+        {/* Section 13 — Google Cloud Startup */}
+        <GoogleCloudSection />
 
-      {/* Section 14 — Contact / CTA Footer */}
-      <ContactSection />
-    </main>
+        {/* Section 14 — Contact / CTA Footer */}
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 }

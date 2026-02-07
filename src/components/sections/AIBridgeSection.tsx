@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  cardVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const valueProps = [
   {
@@ -70,17 +74,23 @@ export default function AIBridgeSection() {
             </p>
           </motion.div>
 
-          {/* Right column — three rows */}
-          <div className="flex-1 space-y-6">
+          {/* Right column — three rows with stagger */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex-1 space-y-6"
+          >
             {valueProps.map((prop, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                variants={cardVariants}
                 className="flex flex-col gap-4 sm:flex-row sm:items-stretch"
               >
                 {/* Colored label block */}
                 <div
-                  className={`flex min-w-[220px] flex-col justify-center rounded-2xl ${prop.labelBg} px-6 py-5`}
+                  className={`flex min-w-55 flex-col justify-center rounded-2xl ${prop.labelBg} px-6 py-5`}
                 >
                   <span
                     className={`text-xs font-medium uppercase tracking-wider ${prop.labelText} opacity-80`}
@@ -113,7 +123,7 @@ export default function AIBridgeSection() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 

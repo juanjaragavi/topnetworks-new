@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  metricVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const metrics = [
   {
@@ -67,12 +71,18 @@ export default function KeyMetricsSection() {
           </p>
         </motion.div>
 
-        {/* Four metric columns in a single row */}
-        <div className="mb-16 grid grid-cols-2 gap-8 lg:grid-cols-4">
+        {/* Four metric columns in a single row — staggered scale-in */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-16 grid grid-cols-2 gap-8 lg:grid-cols-4"
+        >
           {metrics.map((metric, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={metricVariants}
               className="text-left"
             >
               <div className="border-t-2 border-[#1C5AD8]/10 pt-6">
@@ -88,7 +98,7 @@ export default function KeyMetricsSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom tagline */}
         <motion.div variants={itemVariants} className="text-center">

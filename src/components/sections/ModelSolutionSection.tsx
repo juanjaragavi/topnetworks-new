@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  cardVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const solutions = [
   {
@@ -109,12 +113,18 @@ export default function ModelSolutionSection() {
           the death of organic reach through AI-driven intent refinement.
         </motion.p>
 
-        {/* Four open columns — no card borders */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Four open columns — staggered fade-up */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={cardVariants}
               className="flex flex-col items-center text-center"
             >
               <div className="mb-4">{solution.icon}</div>
@@ -126,7 +136,7 @@ export default function ModelSolutionSection() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom-right watermark */}

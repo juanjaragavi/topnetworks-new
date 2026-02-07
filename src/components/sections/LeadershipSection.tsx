@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  photoVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const team = [
   {
@@ -77,10 +81,16 @@ export default function LeadershipSection() {
           </span>
         </motion.h2>
 
-        {/* Four profile cards */}
-        <div className="mb-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Four profile cards — staggered photo reveal */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mb-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {team.map((member, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={photoVariants}>
               <div className="h-full rounded-2xl bg-white border border-gray-100 shadow-md overflow-hidden">
                 {/* Photo — grayscale */}
                 <div className="flex items-center justify-center p-6 pb-2">
@@ -124,7 +134,7 @@ export default function LeadershipSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Investors section */}
         <motion.div

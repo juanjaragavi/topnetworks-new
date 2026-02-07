@@ -66,7 +66,7 @@ export default function ProductLogosSection() {
               <div
                 className={`flex items-center gap-6 rounded-2xl border-l-4 ${product.accent} bg-gray-50 p-6 shadow-sm`}
               >
-                <div className="flex h-16 w-28 flex-shrink-0 items-center justify-center">
+                <div className="flex h-16 w-28 shrink-0 items-center justify-center">
                   <Image
                     src={`/images/${product.logo}`}
                     alt={product.name}

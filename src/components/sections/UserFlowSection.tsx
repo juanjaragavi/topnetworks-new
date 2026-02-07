@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  slideFromLeftVariants,
+  sequentialContainer,
+} from "@/components/AnimatedSection";
 
 const steps = [
   {
@@ -63,12 +67,18 @@ export default function UserFlowSection() {
           </span>
         </motion.h2>
 
-        {/* Four numbered step cards with blue rounded borders */}
-        <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Four numbered step cards — sequential left-to-right reveal */}
+        <motion.div
+          variants={sequentialContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={slideFromLeftVariants}
               className="relative"
             >
               <div
@@ -101,7 +111,7 @@ export default function UserFlowSection() {
               )}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* App screenshots row */}
         <motion.div

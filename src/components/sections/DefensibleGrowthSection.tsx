@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  scaleInVariants,
+} from "@/components/AnimatedSection";
 
 const stages = [
   { label: "Massive Execution", sublabel: "Scale", angle: 0 },
@@ -38,10 +41,10 @@ export default function DefensibleGrowthSection() {
         </motion.h2>
 
         <div className="flex flex-col items-center gap-16 lg:flex-row lg:items-start lg:gap-20">
-          {/* Flywheel diagram */}
+          {/* Flywheel diagram — scale-in from center */}
           <motion.div
-            variants={itemVariants}
-            className="relative flex flex-shrink-0 items-center justify-center"
+            variants={scaleInVariants}
+            className="relative flex shrink-0 items-center justify-center"
           >
             <div className="relative h-80 w-80 sm:h-96 sm:w-96">
               {/* Outer ring */}

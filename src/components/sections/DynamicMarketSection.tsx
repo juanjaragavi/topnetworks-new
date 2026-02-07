@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  cardVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const cards = [
   {
@@ -80,10 +84,16 @@ export default function DynamicMarketSection() {
           <div className="relative z-10 h-28 w-44 rounded-2xl bg-[#1C5AD8] shadow-xl" />
         </motion.div>
 
-        {/* Three-column card grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        {/* Three-column card grid — staggered fade-up */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-3"
+        >
           {cards.map((card, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={cardVariants}>
               <div className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 className="mb-4 text-base font-bold text-gray-900 underline decoration-1 underline-offset-4">
                   {card.title}
@@ -100,7 +110,7 @@ export default function DynamicMarketSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom-right watermark */}

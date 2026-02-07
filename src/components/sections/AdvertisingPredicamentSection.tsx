@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  cardVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const problems = [
   {
@@ -58,10 +62,16 @@ export default function AdvertisingPredicamentSection() {
           </p>
         </motion.div>
 
-        {/* Three vertical cards */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        {/* Three vertical cards — staggered fade-up */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-3"
+        >
           {problems.map((problem, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={cardVariants}>
               <div className="h-full rounded-2xl bg-white p-8 shadow-md border border-gray-100">
                 <p
                   className={`text-sm ${problem.labelItalic ? "italic" : ""} mb-1`}
@@ -83,7 +93,7 @@ export default function AdvertisingPredicamentSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom-right watermark */}

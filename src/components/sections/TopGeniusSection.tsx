@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedSection, { itemVariants } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  itemVariants,
+  cardVariants,
+  staggerContainer,
+} from "@/components/AnimatedSection";
 
 const tools = [
   {
@@ -78,12 +82,18 @@ export default function TopGeniusSection() {
           operational leverage and superior yields.
         </motion.p>
 
-        {/* Four columns with smartphone mockups */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Four columns with smartphone mockups — staggered card reveal */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {tools.map((tool, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={cardVariants}
               className="flex flex-col"
             >
               {/* Smartphone mockup */}
@@ -100,7 +110,7 @@ export default function TopGeniusSection() {
               {/* Title with blue checkmark */}
               <div className="mb-1 flex items-center gap-2">
                 <svg
-                  className="h-5 w-5 flex-shrink-0 text-[#1C5AD8]"
+                  className="h-5 w-5 shrink-0 text-[#1C5AD8]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -139,7 +149,7 @@ export default function TopGeniusSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom-right watermark */}

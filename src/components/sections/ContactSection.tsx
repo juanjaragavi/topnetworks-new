@@ -29,7 +29,7 @@ export default function ContactSection() {
           {/* LEFT — smartphone mockup */}
           <motion.div
             variants={itemVariants}
-            className="relative flex-shrink-0 order-2 lg:order-1"
+            className="relative shrink-0 order-2 lg:order-1"
           >
             <Image
               src="/images/fading-mobile-phone-slide-14.webp"
@@ -59,7 +59,7 @@ export default function ContactSection() {
               variants={itemVariants}
               className="flex items-center gap-4"
             >
-              <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-full border-2 border-[#97E087]">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-[#97E087]">
                 <Image
                   src="/images/camilo-gomez.webp"
                   alt="Camilo Gomez"
