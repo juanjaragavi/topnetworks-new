@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import HeroSection from "@/components/sections/HeroSection";
 import CompanyOverviewSection from "@/components/sections/CompanyOverviewSection";
 import KeyMetricsSection from "@/components/sections/KeyMetricsSection";
@@ -63,6 +64,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

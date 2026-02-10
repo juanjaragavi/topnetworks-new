@@ -8,9 +8,9 @@ export default function Footer() {
         <Image
           src="/images/topnetworks-logo-full-color.webp"
           alt="Top Networks"
-          width={100}
-          height={28}
-          className="h-6 w-auto object-contain brightness-0 invert"
+          width={160}
+          height={44}
+          className="h-10 w-auto object-contain brightness-0 invert"
         />
 
         {/* Copyright */}
