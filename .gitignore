@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 #Files to ignore for development
-/files/
+../files/
