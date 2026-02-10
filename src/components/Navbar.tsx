@@ -154,9 +154,9 @@ export default function Navbar() {
           <Image
             src="/images/topnetworks-logo-full-color.webp"
             alt="Top Networks"
-            width={140}
-            height={38}
-            className={`h-8 w-auto object-contain transition-all duration-300 ${
+            width={280}
+            height={76}
+            className={`h-16 w-auto object-contain transition-all duration-300 ${
               scrolled ? "" : "brightness-0 invert"
             }`}
             priority

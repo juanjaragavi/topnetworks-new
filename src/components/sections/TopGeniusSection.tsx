@@ -151,17 +151,6 @@ export default function TopGeniusSection() {
           ))}
         </motion.div>
       </div>
-
-      {/* Bottom-right watermark */}
-      <div className="absolute bottom-6 right-6 z-10">
-        <Image
-          src="/images/topnetworks-logo-full-color.webp"
-          alt="Top Networks"
-          width={40}
-          height={40}
-          className="opacity-40 w-8 h-8 object-contain"
-        />
-      </div>
     </AnimatedSection>
   );
 }

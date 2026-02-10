@@ -42,20 +42,6 @@ export default function CompanyOverviewSection() {
             </span>
           </motion.p>
         </div>
-
-        {/* Bottom-right watermark */}
-        <motion.div
-          variants={itemVariants}
-          className="absolute bottom-6 right-6"
-        >
-          <Image
-            src="/images/topnetworks-logo-full-color.webp"
-            alt="Top Networks"
-            width={40}
-            height={40}
-            className="brightness-0 invert opacity-40 w-8 h-8 object-contain"
-          />
-        </motion.div>
       </div>
     </AnimatedSection>
   );

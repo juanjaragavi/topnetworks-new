@@ -15,6 +15,13 @@ const steps = [
     description:
       "Acquiring high-volume traffic from display, social, and email channels.",
     dashed: false,
+    visual: {
+      type: "image",
+      src: "/images/app-1-slide-8.webp",
+      width: 280,
+      height: 560,
+      alt: "Mobile UI Screenshot",
+    },
   },
   {
     number: "02",
@@ -23,6 +30,13 @@ const steps = [
     description:
       'AI-curated "Information-First" content yields a 34% CTR (680x higher than industry average).',
     dashed: false,
+    visual: {
+      type: "image",
+      src: "/images/app-2-slide-8.webp",
+      width: 280,
+      height: 560,
+      alt: "Citi Desktop UI Screenshot",
+    },
   },
   {
     number: "03",
@@ -30,6 +44,13 @@ const steps = [
     description:
       "Direct high-intent brand alignment (e.g., Citi) driving a $345 eCPM.",
     dashed: false,
+    visual: {
+      type: "image",
+      src: "/images/app-3-slide-8.webp",
+      width: 280,
+      height: 560,
+      alt: "Dashboard Screenshot",
+    },
   },
   {
     number: "04",
@@ -37,6 +58,14 @@ const steps = [
     description:
       "Real-time data feeds AI tools to continuously optimize acquisition costs and yield.",
     dashed: true,
+    visual: {
+      type: "logo",
+      src: "/images/top-genius-platforms-logo-slide-8.webp",
+      width: 200,
+      height: 200,
+      alt: "TOP Genius AI Logo",
+      label: "TOP GENIUS PLATFORMS",
+    },
   },
 ];
 
@@ -61,32 +90,33 @@ export default function UserFlowSection() {
           variants={itemVariants}
           className="mb-16 text-3xl font-bold text-gray-900 sm:text-4xl"
         >
-          User Flow: The Intent Refinement Engine —{" "}
+          User Flow:{" "}
           <span className="text-[#1C5AD8] italic">
-            Turning Traffic into High-Yield Assets.
+            The Intent Refinement Engine: Turning Traffic into High-Yield Assets
           </span>
         </motion.h2>
 
-        {/* Four numbered step cards — sequential left-to-right reveal */}
+        {/* 4-Column Grid: Step Cards + Visual Assets */}
         <motion.div
           variants={sequentialContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
         >
           {steps.map((step, index) => (
             <motion.div
               key={index}
               variants={slideFromLeftVariants}
-              className="relative"
+              className="relative flex flex-col"
             >
+              {/* Step Card */}
               <div
-                className={`flex h-full flex-col rounded-2xl border-2 ${
+                className={`flex flex-col rounded-2xl border-2 ${
                   step.dashed
                     ? "border-dashed border-[#1C5AD8]/40"
                     : "border-[#1C5AD8]/30"
-                } bg-white p-6`}
+                } bg-white p-6 mb-6`}
               >
                 <span className="text-4xl font-bold text-[#1C5AD8]/20">
                   {step.number}
@@ -103,59 +133,46 @@ export default function UserFlowSection() {
                   {step.description}
                 </p>
               </div>
-              {/* Arrow connector */}
+
+              {/* Arrow connector (between cards) */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#1C5AD8] text-2xl">
+                <div className="hidden lg:block absolute -right-3 top-16 z-10 text-[#1C5AD8] text-2xl">
                   →
                 </div>
               )}
+
+              {/* Visual Asset - Aligned in same column */}
+              <div className="flex flex-col items-center justify-start w-full h-full">
+                {step.visual.type === "image" ? (
+                  <div className="w-full rounded-2xl overflow-hidden shadow-lg bg-white h-full flex items-start">
+                    <Image
+                      src={step.visual.src}
+                      alt={step.visual.alt}
+                      width={step.visual.width}
+                      height={step.visual.height}
+                      className="w-full h-auto object-contain object-top"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-between rounded-2xl bg-linear-to-br from-[#1C5AD8]/10 to-[#97E087]/10 p-8 shadow-lg min-h-70">
+                    <div className="flex-1 flex items-center justify-center">
+                      <Image
+                        src={step.visual.src}
+                        alt={step.visual.alt}
+                        width={160}
+                        height={160}
+                        className="w-32 h-32 lg:w-40 lg:h-40 object-contain"
+                      />
+                    </div>
+                    <p className="text-center text-xs lg:text-sm font-bold text-[#1C5AD8] tracking-wider uppercase mt-4">
+                      {step.visual.label}
+                    </p>
+                  </div>
+                )}
+              </div>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* App screenshots row */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-wrap items-end justify-center gap-6"
-        >
-          {[
-            "app-1-slide-8.webp",
-            "app-2-slide-8.webp",
-            "app-3-slide-8.webp",
-          ].map((app, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl shadow-lg">
-              <Image
-                src={`/images/${app}`}
-                alt={`App Screenshot ${index + 1}`}
-                width={240}
-                height={480}
-                className="w-44 sm:w-52"
-              />
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Top Genius Platforms badge — bottom right */}
-        <motion.div variants={itemVariants} className="mt-8 flex justify-end">
-          <Image
-            src="/images/top-genius-platforms-logo-slide-8.webp"
-            alt="TOP Genius Platforms"
-            width={240}
-            height={64}
-            className="h-12 w-auto object-contain"
-          />
-        </motion.div>
-      </div>
-
-      {/* Bottom-right watermark */}
-      <div className="absolute bottom-6 right-6 z-10">
-        <Image
-          src="/images/topnetworks-logo-full-color.webp"
-          alt="Top Networks"
-          width={40}
-          height={40}
-          className="opacity-40 w-8 h-8 object-contain"
-        />
       </div>
     </AnimatedSection>
   );

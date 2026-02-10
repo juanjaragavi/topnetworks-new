@@ -55,21 +55,6 @@ export default function HeroSection() {
           />
         </motion.div>
       </div>
-
-      {/* Bottom-right logo watermark */}
-      <motion.div
-        variants={itemVariants}
-        className="absolute bottom-8 right-8 z-10"
-      >
-        <Image
-          src="/images/topnetworks-logo-full-color.webp"
-          alt="Top Networks Logo"
-          width={48}
-          height={48}
-          className="brightness-0 invert opacity-60 w-10 h-10 object-contain"
-          priority
-        />
-      </motion.div>
     </AnimatedSection>
   );
 }
