@@ -11,6 +11,7 @@ const products = [
     logo: "topfinanzas-logo-full-color.webp",
     category: "Personal Finance",
     accent: "border-l-[#1C5AD8]",
+    url: "https://topfinanzas.com/mx/",
   },
   {
     name: "TopFinance",
@@ -18,6 +19,15 @@ const products = [
     logo: "topfinance-logo-full-color.webp",
     category: "Personal Finance",
     accent: "border-l-[#1C5AD8]",
+    url: "https://us.topfinanzas.com/",
+  },
+  {
+    name: "TopFinance",
+    market: "UK",
+    logo: "topfinance-logo-full-color.webp",
+    category: "Personal Finance",
+    accent: "border-l-[#1C5AD8]",
+    url: "https://uk.topfinanzas.com/",
   },
   {
     name: "BudgetBee",
@@ -25,6 +35,7 @@ const products = [
     logo: "budgetbee-logo-full-color.webp",
     category: "Personal Finance",
     accent: "border-l-[#97E087]",
+    url: "https://budgetbeepro.com/",
   },
   {
     name: "KardTrust",
@@ -32,6 +43,7 @@ const products = [
     logo: "kardtrust-logo-full-color.webp",
     category: "Personal Finance",
     accent: "border-l-[#97E087]",
+    url: "https://kardtrust.com/",
   },
 ];
 
@@ -59,36 +71,43 @@ export default function ProductLogosSection() {
           <span className="text-[#1C5AD8] italic">Product Portfolio</span>
         </motion.h2>
 
-        {/* 2x2 grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {/* Five-column layout on desktop, responsive on smaller screens */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {products.map((product, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <div
-                className={`flex items-center gap-6 rounded-2xl border-l-4 ${product.accent} bg-gray-50 p-6 shadow-sm`}
+              <a
+                href={product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group h-full"
               >
-                <div className="flex h-16 w-28 shrink-0 items-center justify-center">
-                  <Image
-                    src={`/images/${product.logo}`}
-                    alt={product.name}
-                    width={160}
-                    height={60}
-                    className="max-h-14 w-auto object-contain"
-                  />
+                <div
+                  className={`flex flex-col items-center gap-4 rounded-2xl border-t-4 ${product.accent} bg-gray-50 p-6 shadow-sm transition-all duration-300 ease-[0.25,0.1,0.25,1] group-hover:-translate-y-1 group-hover:shadow-lg group-active:scale-[0.98] h-full`}
+                >
+                  <div className="flex h-20 w-full items-center justify-center">
+                    <Image
+                      src={`/images/${product.logo}`}
+                      alt={product.name}
+                      width={160}
+                      height={60}
+                      className="max-h-16 w-auto object-contain"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-base font-bold text-gray-900">
+                      {product.name}
+                      {product.market && (
+                        <span className="ml-1 block text-sm font-normal text-gray-400">
+                          ({product.market})
+                        </span>
+                      )}
+                    </h3>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#1C5AD8]">
+                      {product.category}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {product.name}
-                    {product.market && (
-                      <span className="ml-1 text-sm font-normal text-gray-400">
-                        ({product.market})
-                      </span>
-                    )}
-                  </h3>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#1C5AD8]">
-                    {product.category}
-                  </span>
-                </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>

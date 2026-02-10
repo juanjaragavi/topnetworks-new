@@ -8,7 +8,7 @@ export default function GoogleCloudSection() {
   return (
     <AnimatedSection
       id="google-cloud"
-      className="relative w-full overflow-hidden py-24 lg:py-32"
+      className="relative w-full overflow-hidden h-screen flex items-center justify-center"
     >
       {/* Three-panel background */}
       <div className="absolute inset-0 flex">
@@ -17,13 +17,13 @@ export default function GoogleCloudSection() {
         <div className="w-1/3 bg-gray-50" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-12">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center lg:px-12">
         <motion.h2
           variants={itemVariants}
-          className="mb-12 text-3xl font-bold sm:text-4xl lg:text-5xl"
+          className="mb-6 text-2xl font-bold sm:text-3xl"
         >
           <span className="text-gray-900">We are a </span>
-          <span className="text-[#1C5AD8]">Google Cloud Startup.</span>
+          <span className="text-[#1C5AD8]">Google Cloud Startup</span>
         </motion.h2>
 
         <motion.div
@@ -33,9 +33,9 @@ export default function GoogleCloudSection() {
           <Image
             src="/images/google-cloud-platform-slide-13.webp"
             alt="Google Cloud Platform"
-            width={400}
-            height={120}
-            className="w-64 sm:w-80 lg:w-96"
+            width={200}
+            height={60}
+            className="w-20 sm:w-24 lg:w-28"
           />
         </motion.div>
       </div>
