@@ -8,7 +8,7 @@ export default function GoogleCloudSection() {
   return (
     <AnimatedSection
       id="google-cloud"
-      className="relative w-full overflow-hidden h-screen flex items-center justify-center"
+      className="relative w-full overflow-hidden py-16 lg:py-24 flex items-center justify-center"
     >
       {/* Three-panel background */}
       <div className="absolute inset-0 flex">
