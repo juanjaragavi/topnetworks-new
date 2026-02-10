@@ -42,9 +42,9 @@ export default function DynamicMarketSection() {
         {/* Centered heading */}
         <motion.h2
           variants={itemVariants}
-          className="mb-4 text-center text-3xl font-bold text-[#1C5AD8] sm:text-4xl lg:text-5xl"
+          className="mb-4 text-center text-4xl font-bold text-[#1C5AD8] sm:text-5xl lg:text-6xl"
         >
-          The Opportunity
+          The Opportunity for <span className="text-[#97E087]">Publishers</span>
         </motion.h2>
 
         <motion.p
@@ -58,14 +58,14 @@ export default function DynamicMarketSection() {
           </strong>
         </motion.p>
 
-        {/* Decorative wave lines + blue shape in center */}
+        {/* Decorative wave lines */}
         <motion.div
           variants={itemVariants}
           className="relative mb-16 flex items-center justify-center"
         >
           {/* Wave pattern SVG */}
           <svg
-            className="absolute w-full h-32 opacity-10"
+            className="w-full h-32 opacity-10"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
@@ -79,9 +79,6 @@ export default function DynamicMarketSection() {
               />
             ))}
           </svg>
-
-          {/* Blue rounded rectangle */}
-          <div className="relative z-10 h-28 w-44 rounded-2xl bg-[#1C5AD8] shadow-xl" />
         </motion.div>
 
         {/* Three-column card grid — staggered fade-up */}

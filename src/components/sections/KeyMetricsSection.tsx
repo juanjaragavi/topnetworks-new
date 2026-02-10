@@ -24,11 +24,6 @@ const metrics = [
     label: "Brands",
     detail: "advertising on our web properties",
   },
-  {
-    value: "2.4m",
-    label: "Ad",
-    detail: "impressions served",
-  },
 ];
 
 export default function KeyMetricsSection() {
@@ -77,7 +72,7 @@ export default function KeyMetricsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-16 grid grid-cols-2 gap-8 lg:grid-cols-4"
+          className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-3"
         >
           {metrics.map((metric, index) => (
             <motion.div

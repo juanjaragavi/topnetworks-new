@@ -53,7 +53,6 @@ const NAV_GROUPS = [
     items: [
       { label: "Leadership", id: "leadership" },
       { label: "Products", id: "products" },
-      { label: "Google Cloud", id: "google-cloud" },
     ],
   },
 ];

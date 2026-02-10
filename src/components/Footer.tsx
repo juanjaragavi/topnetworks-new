@@ -20,10 +20,10 @@ export default function Footer() {
 
         {/* Contact link */}
         <a
-          href="mailto:camilo.gomez@topnetworks.co"
+          href="mailto:top.admin@topnetworks.co"
           className="text-xs text-[#97E087] hover:text-white transition-colors"
         >
-          camilo.gomez@topnetworks.co
+          top.admin@topnetworks.co
         </a>
       </div>
     </footer>
