@@ -43,7 +43,7 @@ const solutions = [
       </svg>
     ),
     description:
-      "By refining intent through a proprietary content framework, achieves a 34% CTR vs. 0.05% industry average — 680x higher.",
+      "By refining intent through a proprietary content framework, achieves a 34% CTR vs. 0.05% industry average — 68x higher.",
   },
   {
     title: "High-Yield Monetization",
@@ -85,7 +85,7 @@ export default function ModelSolutionSection() {
   return (
     <AnimatedSection
       id="model-solution"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div

@@ -10,31 +10,31 @@ import AnimatedSection, {
 
 const tools = [
   {
-    name: "Email Genius",
-    subtitle: "Lifecycle Orchestration Agent",
+    name: "Email Genius V1",
+    subtitle: "Email creative generation agent",
     image: "smartphone-1-slide-9.webp",
     capability:
-      "An autonomous AI-agent engine that generates personalized templates, high-conversion copy, and dynamic imagery.",
+      "AI-agent that generates personalized email content and designs, with success feedback loop.",
     efficiency:
-      "Trained on historical performance data to predictively deploy content that maximizes open rates and CTR.",
+      "Trained on historical performance data to deploy content that maximizes Open Rates and CTR.",
   },
   {
     name: "RSoC Content Generator",
     subtitle: "Intent Extraction Agent",
     image: "smartphone-2-slide-9.webp",
     capability:
-      "Automated keyword intelligence coupled with real-time AI content generation specifically for Search Arbitrage (RSoC) monetization.",
+      "Automated keyword intelligence coupled with real-time AI content and campaign generation specifically for Search Arbitrage (RSoC) monetization.",
     efficiency:
-      'Rapidly identifies high-value "intent buckets" to capture premium search budgets with zero manual research.',
+      'Rapidly identifies high-value "intent buckets" to capture premium search budgets.',
   },
   {
     name: "Meta Campaign Generator",
     subtitle: "Creative-to-Campaign Bridge",
     image: "smartphone-3-slide-9.webp",
     capability:
-      "Directly ingests insights from the Content Generator to produce multi-format AI visual assets and ad copy for Meta ecosystems.",
+      "Directly ingests insights from the Content Generator to produce multi-format AI visual assets and ad-copy for Meta ecosystems.",
     efficiency:
-      'Eliminates the "Creative Bottleneck" by bridging content production and campaign activation in a single automated flow.',
+      'Eliminates the "Creative Bottleneck" by bridging and scaling content production and campaign activation in a single automated flow.',
   },
   {
     name: "Magic Banner Creator",
@@ -51,7 +51,7 @@ export default function TopGeniusSection() {
   return (
     <AnimatedSection
       id="top-genius"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div

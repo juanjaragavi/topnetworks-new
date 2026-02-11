@@ -36,7 +36,7 @@ export default function DynamicMarketSection() {
   return (
     <AnimatedSection
       id="dynamic-market"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
         {/* Centered heading */}

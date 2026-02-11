@@ -11,11 +11,11 @@ import AnimatedSection, {
 const valueProps = [
   {
     audience: "For Users",
-    title: "Objective Decision Support",
+    title: "Objective valuable ads that drive decision",
     value:
-      "Transforms confusing ad saturation into curated, trustworthy information.",
+      "Transforms confusing ad saturation into curated, trustworthy options.",
     outcome:
-      "Users make confident purchasing decisions in a context-rich, non-intrusive environment.",
+      "Users make better informed decisions in a context-rich, non-intrusive environment.",
     labelBg: "bg-linear-to-r from-[#1C5AD8] to-[#4a7de8]",
     labelText: "text-white",
   },
@@ -23,18 +23,18 @@ const valueProps = [
     audience: "For Advertisers",
     title: "Precision at Scale",
     value:
-      "Connects brands with pre-qualified, high-intent users in specific categories.",
+      "Connects brands with pre-qualified, high-intent users in target categories.",
     outcome:
-      "Algorithmic resilience and scalable Customer Acquisition Cost (CAC).",
+      "Improved returns by reaching and acquiring high-converting users.",
     labelBg: "bg-[#97E087]",
     labelText: "text-gray-900",
   },
   {
     audience: "For Media Platforms",
-    title: "Institutional Yield Management",
-    value: "Enhances standard inventory with high-intent category context.",
+    title: "Increased scalable revenues",
+    value: "Enhances inventory with high-intent context boosting platform results.",
     outcome:
-      "A highly efficient, AI-agentic engine that can be replicated across global markets in different publisher segments.",
+      "Consolidated partnership towards common growth goal.",
     labelBg: "bg-[#1C5AD8]",
     labelText: "text-white",
   },
@@ -44,7 +44,7 @@ export default function AIBridgeSection() {
   return (
     <AnimatedSection
       id="ai-bridge"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div
@@ -63,14 +63,10 @@ export default function AIBridgeSection() {
             className="lg:w-2/5 lg:sticky lg:top-32"
           >
             <h2 className="text-3xl font-bold sm:text-4xl">
-              <span className="text-[#1C5AD8]">Top Networks:</span>{" "}
-              <span className="text-gray-900">
-                The AI-Driven Bridge for Modern Marketing.
-              </span>
+              <span className="text-[#1C5AD8]">The Top Networks Value Engine</span>
             </h2>
             <p className="mt-4 text-gray-500">
-              Delivering high-intent audiences to brands through an objective,
-              information-first mediation layer.
+              AI-Driven Bridge for Modern Digital Advertising
             </p>
           </motion.div>
 

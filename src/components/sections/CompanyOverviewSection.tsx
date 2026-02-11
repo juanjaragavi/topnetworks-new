@@ -35,10 +35,10 @@ export default function CompanyOverviewSection() {
             <span className="italic text-[#97E087]">
               high intent customers to relevant advertisers
             </span>{" "}
-            through our proprietary marketing platform and our digital
-            properties{" "}
+            through our proprietary AI AdTech
+            and our digital properties{" "}
             <span className="italic text-[#97E087]">
-              achieving exponential ad conversions.
+              achieving exponential ad profitability.
             </span>
           </motion.p>
         </div>

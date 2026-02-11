@@ -54,7 +54,7 @@ export default function LeadershipSection() {
   return (
     <AnimatedSection
       id="leadership"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div

@@ -12,7 +12,7 @@ const metrics = [
   {
     value: "34%",
     label: "CTR",
-    detail: "680x the Industry Average",
+    detail: "68x the Industry Average",
   },
   {
     value: "$345",
@@ -22,7 +22,7 @@ const metrics = [
   {
     value: "+300",
     label: "Brands",
-    detail: "advertising on our web properties",
+    detail: "advertising on our web properties plus 1,000+ SMB advertisers",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function KeyMetricsSection() {
   return (
     <AnimatedSection
       id="key-metrics"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture background */}
       <div
@@ -47,7 +47,7 @@ export default function KeyMetricsSection() {
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
             Architecting Win-Win{" "}
             <span className="italic text-[#1C5AD8]">
-              Marketing Interactions
+              Ad Interactions
             </span>
           </h2>
         </motion.div>
@@ -61,7 +61,7 @@ export default function KeyMetricsSection() {
           <p className="mx-auto max-w-3xl text-base text-gray-600">
             We drive superior advertising results by{" "}
             <span className="font-bold">
-              connecting users with the brands they genuinely love.
+              connecting users with the brands that add genuine value.
             </span>
           </p>
         </motion.div>

@@ -18,7 +18,7 @@ export default function DefensibleGrowthSection() {
   return (
     <AnimatedSection
       id="defensible-growth"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div
@@ -116,9 +116,9 @@ export default function DefensibleGrowthSection() {
               {stages.map((stage, index) => {
                 const positions = [
                   "top-0 left-1/2 -translate-x-1/2 -translate-y-2",
-                  "top-1/2 right-0 translate-x-2 -translate-y-1/2",
+                  "top-1/2 right-0 translate-x-10 -translate-y-1/2",
                   "bottom-0 left-1/2 -translate-x-1/2 translate-y-2",
-                  "top-1/2 left-0 -translate-x-2 -translate-y-1/2",
+                  "top-1/2 left-0 -translate-x-[60%] -translate-y-1/2",
                 ];
                 return (
                   <div

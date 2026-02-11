@@ -13,7 +13,7 @@ import TopGeniusSection from "@/components/sections/TopGeniusSection";
 import DefensibleGrowthSection from "@/components/sections/DefensibleGrowthSection";
 import LeadershipSection from "@/components/sections/LeadershipSection";
 import ProductLogosSection from "@/components/sections/ProductLogosSection";
-import GoogleCloudSection from "@/components/sections/GoogleCloudSection";
+
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
@@ -57,10 +57,7 @@ export default function Home() {
         {/* Section 12 — Product Logos */}
         <ProductLogosSection />
 
-        {/* Section 13 — Google Cloud Startup */}
-        <GoogleCloudSection />
-
-        {/* Section 14 — Contact / CTA Footer */}
+        {/* Section 13 — Contact / CTA Footer */}
         <ContactSection />
       </main>
       <Footer />

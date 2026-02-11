@@ -18,10 +18,11 @@ interface FormErrors {
   message?: string;
 }
 
-// EmailJS Configuration - Replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_topnetworks";
-const EMAILJS_TEMPLATE_ID = "template_contact";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your EmailJS public key
+// EmailJS Configuration - reads from .env.local
+// NEXT_PUBLIC_EMAILJS_PUBLIC_KEY must be the Public Key from EmailJS > Account > API Keys
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
@@ -85,9 +86,26 @@ export default function ContactSection() {
     setSubmitStatus("idle");
 
     try {
-      // Send email to both recipients using EmailJS
-      // The template should be configured to send to both:
-      // top.admin@topnetworks.co and juan.hoyos@topnetworks.co
+      // Check if EmailJS is properly configured
+      if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+        // Fallback: open mailto link
+        const subject = encodeURIComponent(`Contact Form: Message from ${formData.name}`);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        window.open(
+          `mailto:top.admin@topnetworks.co,juan.hoyos@topnetworks.co?subject=${subject}&body=${body}`,
+          "_self",
+        );
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        return;
+      }
+
+      // Initialize EmailJS with public key
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // Send email using EmailJS
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -95,15 +113,15 @@ export default function ContactSection() {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_emails: "top.admin@topnetworks.co, juan.hoyos@topnetworks.co",
+          to_email: "top.admin@topnetworks.co",
         },
-        EMAILJS_PUBLIC_KEY,
       );
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("EmailJS Error:", error);
+      console.error("Config used — Service:", EMAILJS_SERVICE_ID, "Template:", EMAILJS_TEMPLATE_ID, "Key:", EMAILJS_PUBLIC_KEY?.slice(0, 4) + "...");
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

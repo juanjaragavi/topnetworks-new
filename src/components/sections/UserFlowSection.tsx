@@ -28,7 +28,7 @@ const steps = [
     title: "Intent Refinement (The Bridge)",
     subtitle: "Top Networks Sites",
     description:
-      'AI-curated "Information-First" content yields a 34% CTR (680x higher than industry average).',
+      'AI-curated "Information-First" content yields a 34% CTR (68x higher than industry average).',
     dashed: false,
     visual: {
       type: "image",
@@ -73,7 +73,7 @@ export default function UserFlowSection() {
   return (
     <AnimatedSection
       id="user-flow"
-      className="relative w-full bg-white py-24 lg:py-32 overflow-hidden"
+      className="relative z-0 w-full bg-white py-24 lg:py-32 overflow-hidden isolate"
     >
       {/* Grid dot texture */}
       <div
