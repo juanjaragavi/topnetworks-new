@@ -20,9 +20,9 @@ interface FormErrors {
 
 // EmailJS Configuration - reads from .env.local
 // NEXT_PUBLIC_EMAILJS_PUBLIC_KEY must be the Public Key from EmailJS > Account > API Keys
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+const EMAILJS_SERVICE_ID = (process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "").trim();
+const EMAILJS_TEMPLATE_ID = (process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "").trim();
+const EMAILJS_PUBLIC_KEY = (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "").trim();
 
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
@@ -103,7 +103,9 @@ export default function ContactSection() {
       }
 
       // Initialize EmailJS with public key
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+      emailjs.init({
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
 
       // Send email using EmailJS
       await emailjs.send(
@@ -114,6 +116,9 @@ export default function ContactSection() {
           from_email: formData.email,
           message: formData.message,
           to_email: "top.admin@topnetworks.co",
+        },
+        {
+          publicKey: EMAILJS_PUBLIC_KEY,
         },
       );
 
